@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  opacity: 80%;
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#mask img#explainBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+#mask p {
+  color: #000;
+  font-family: Inter;
+  font-size: 26.094px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  z-index: 30;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+p#explainText2, p#explainEngText2 {
+  display: none;
+}
+
+.scroll-container {
+  position: absolute;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.background {
+  height: 100vh;
+  object-fit: cover;
+}
+
+#img {
+  position: absolute;
+  bottom: 10%;
+  left: 48.5%;
+  height: 40%;
+  transform: translate(-50%, 10%);
+  width: auto;
+  z-index: 10;
+}
+
+#transfer {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  opacity: 0;
+  display: none;
+  z-index: 50;
+  transition: all 0.8s ease;
+}
+
+@media (max-width: 1000px) {
+  #mask img#explainBackground {
+    width: 90vw;
+  }
+
+  p#explainEngText1, p#explainEngText2 {
+    display: none;
+  }
+
+  #mask p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+}

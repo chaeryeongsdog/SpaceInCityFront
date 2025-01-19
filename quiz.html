@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>都市空白鍵</title>
+    <link rel="stylesheet" href="./css/quiz.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="video-container">
+      <video autoplay loop id="background-video">
+        <source src="./video/overpage.mp4" type="video/mp4" />
+        您的瀏覽器不支持 video 標籤。
+      </video>
+    </div>
+    <div class="content">
+      <div id="mask">
+        <img src="./img/quiz_background.png" alt="" id="quizBackground" />
+        <p id="quizText1">
+          結束體驗角色的生活後，你的生活是否也像他一樣很忙很累呢？<br />
+          在快節奏的生活中，大家都在尋找屬於自己的空白鍵<br />
+          「 那你的空白鍵呢？ 」
+        </p>
+        <p id="quizText2">
+          輸入你的名字<br />
+          What's your name
+        </p>
+        <p id="quizText3">
+          一直為生活忙碌的你，此刻最想做什麼呢？<br />
+          You always busy with life, what do you want to do right now?
+        </p>
+        <input
+          type="text"
+          id="nameQuiz"
+          placeholder="請輸入你的稱呼"
+          maxlength="7"
+          autocomplete="off"
+        />
+        <input
+          type="text"
+          id="quiz"
+          placeholder="請輸入你的答案"
+          maxlength="7"
+          autocomplete="off"
+        />
+        <img
+          src="./img/toResult.png"
+          alt=""
+          id="toNameBtn"
+          onclick="toName()"
+        />
+        <img
+          src="./img/toResult.png"
+          alt=""
+          id="toResultBtn"
+          onclick="toResult()"
+        />
+        <img
+          src="./img/toResult.png"
+          alt=""
+          id="toQuizBtn"
+          onclick="toQuiz()"
+        />
+      </div>
+    </div>
+
+    <div id="end">
+      <p id="loading">LOADING</p>
+    </div>
+
+    <script src="./js/quiz.js"></script>
+  </body>
+</html>

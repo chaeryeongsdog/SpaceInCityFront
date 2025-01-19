@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>都市空白鍵</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/selectCharacter.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <img src="./img/logo_black.png" alt="" id="logo" />
+        <p>
+          Have you ever thought about slowing down <br />
+          and give your life a space?
+        </p>
+      </div>
+      <div class="header-right">
+        <img src="./img/triangle.png" alt="" id="triangle" />
+        <img src="./img/space_diary_btn.png" alt="" />
+        <img src="./img/space_card_btn.png" alt="" />
+        <img src="./img/city_space_btn.png" alt="" />
+      </div>
+    </div>
+    <div class="character">
+      <div class="top">
+        <p>請簡單選擇一個都市人</p>
+      </div>
+      <div class="middle">
+        <div class="block">
+          <input type="radio" id="radio1" name="character" value="1" />
+          <label for="radio1">
+            <img src="./img/character1.png" alt="" />
+          </label>
+        </div>
+        <div class="block">
+          <input type="radio" id="radio2" name="character" value="2"/>
+          <label for="radio2">
+            <img src="./img/character2.png" alt="" />
+          </label>
+        </div>
+        <div class="block">
+          <input type="radio" id="radio3" name="character" value="3" />
+          <label for="radio3">
+            <img src="./img/character3.png" alt="" />
+          </label>
+        </div>
+      </div>
+      <div class="bottom">
+        <img src="./img/name_border.png" alt="">
+        <input type="text" id="name" placeholder="請輸入你的姓名" autocomplete="off">
+        <img src="./img/toExplain.png" alt="" id="toExplainBtn" onclick="toExplain()">
+      </div>
+    </div>
+    <div id="mask"></div>
+    <div class="scroll-container" id="scrollContainer">
+      <img
+        src="./img/background_b.png"
+        alt="寬圖片"
+        id="background1"
+        class="background"
+      />
+      <img
+        src="./img/background_b.png"
+        alt="寬圖片"
+        id="background2"
+        class="background"
+      />
+    </div>
+    <div id="transfer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/selectCharacter.js"></script>
+  </body>
+</html>
