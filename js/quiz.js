@@ -74,7 +74,7 @@ function toResult() {
 
   localStorage.setItem("answer", answer);
 
-  fetch("http://localhost:5242/api/Messages/PostMessage", {
+  fetch("https://spaceincityback.onrender.com/api/Messages/PostMessage", {
     method: "POST",
     headers: {
       "Content-Type": "application/json", // 指定請求內容是 JSON

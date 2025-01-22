@@ -5,7 +5,7 @@ let allanswer = [];
 async function fetchData() {
   try {
     const response = await fetch(
-      "http://localhost:5242/api/Messages/GetMessage",
+      "https://spaceincityback.onrender.com/api/Messages/GetMessage",
       {
         method: "GET",
       }
