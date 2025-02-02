@@ -48,7 +48,7 @@ img#spaceInTheCity {
 
 .container {
   width: 5760px;
-  height: 1080px;
+  height: 100vh;
   scroll-behavior: smooth;
   position: relative;
 }
@@ -59,39 +59,15 @@ img#spaceInTheCity {
   display: none;
   position: absolute;
   pointer-events: none;
+  width: 20vw;
 }
 
 @media (max-width: 1000px) {
-  .header {
-    padding: 3vh 0 0 5vw;
-    display: flex;
-    justify-content: space-between;
-    height: auto;
-    position: relative;
-    z-index: 50;
-  }
-  img#logo {
-    position: relative;
-    width: 37vw;
-  }
-  .header-left p {
-    display: none;
-  }
-  .header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    width: 100%;
-  }
-  .header-right img:nth-child(4) {
-    margin-right: 16px;
-    margin-top: 6px;
-  }
-  img.triangle {
-    display: none;
-  }
-  img.headerBtn {
-    height: 35px;
+  img#backBtn {
+    height: 5vh;
     width: auto;
+  }
+  .hover-image {
+    width: 60vw;
   }
 }

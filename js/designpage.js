@@ -11,7 +11,7 @@ document.getElementById('backgroundMusic').play()
 function mouse_wheel(e) {
   e = e || window.event;
 
-  var totalWidth = 3 * window.innerWidth;
+  var totalWidth = 5760;
 
   // 滾動向下
   if (e.wheelDelta <= 0 || e.detail > 0) {
@@ -32,7 +32,7 @@ function mouse_wheel(e) {
 
 // 自動滾動的設置
 var autoScrollInterval = setInterval(function() {
-  var totalWidth = 3 * window.innerWidth;  // 計算網頁總寬度
+  var totalWidth = 5760;  // 計算網頁總寬度
 
   // 根據滾動方向選擇滾動
   if (scrollDirection === 'right') {

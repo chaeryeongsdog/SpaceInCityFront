@@ -137,3 +137,65 @@ img#downloadBtn {
   z-index: 50;
   cursor: pointer;
 }
+
+@media (max-width: 1000px) {
+  .header {
+    padding: 3vh 0 0 5vw;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    position: relative;
+    z-index: 50;
+  }
+  img#backBtn {
+    height: 35px;
+    width: auto;
+  }
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+  }
+  .header-right a {
+    margin-right: 16px;
+  }
+  .header-right img:nth-child(4) {
+    margin-right: 16px;
+    margin-top: 6px;
+  }
+  img.triangle {
+    display: none;
+  }
+  img.headerBtn {
+    height: 35px;
+    width: auto;
+  }
+
+  img#downloadBtn {
+    height: 80px;
+  }
+
+  .toJPG {
+    width: 525px;
+    height: 196px;
+  }
+  #card {
+    width: 525px;
+    height: 196px;
+  }
+  @keyframes rotate3D {
+    0% {
+      transform: translate(-50%, -50%) rotateY(0) rotateZ(70deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateY(360deg) rotateZ(70deg);
+    }
+  }
+  .toJPG p.answerText {
+    font-size: 30px;
+  }
+  .toJPG p.nameText {
+    font-size: 20px;
+  }
+}
