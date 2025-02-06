@@ -3,6 +3,7 @@ document.getElementById("backgroundMusic").play();
 let allanswer = [];
 
 async function fetchData() {
+  allanswer = []
   try {
     const response = await fetch(
       "https://spaceincityback.onrender.com/api/Messages/GetMessage",
