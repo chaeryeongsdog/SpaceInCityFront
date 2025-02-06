@@ -27,6 +27,10 @@ async function fetchData() {
       }
     }
     const fontSizes = [31, 47, 84, 125, 167];
+    if (document.body.clientWidth > 1000) {
+      fontSizes = [31, 47, 84, 125, 167]
+    }
+    else fontSizes = [9, 13, 23, 34, 45]
     const opacityLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
     const maxWeight = Math.max(...allanswer.map((word) => word[1]));
     const minWeight = Math.min(...allanswer.map((word) => word[1]));
