@@ -67,4 +67,6 @@ async function fetchData() {
   }
 }
 
-fetchData(); // 呼叫 async 函式來獲取資料
+setInterval(() => {
+  fetchData();
+}, 10000);
