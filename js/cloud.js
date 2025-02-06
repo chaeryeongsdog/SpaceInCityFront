@@ -26,7 +26,7 @@ async function fetchData() {
         allanswer.push([data[i].content, data[i].count]); // 將資料推入 test1
       }
     }
-    const fontSizes = [31, 47, 84, 125, 167];
+    let fontSizes = [];
     if (document.body.clientWidth > 1000) {
       fontSizes = [31, 47, 84, 125, 167]
     }
