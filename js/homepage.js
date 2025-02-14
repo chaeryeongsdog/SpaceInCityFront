@@ -4,8 +4,22 @@ let spaceBtnArrow = document.getElementById("spaceBtnArrow");
 let spaceWordBtn = document.getElementById("spaceWordBtn");
 let spaceDesignBtn = document.getElementById("spaceDesignBtn");
 
-document.getElementById('backgroundMusic').volume = 0.2
-document.getElementById('backgroundMusic').play()
+document.getElementById("backgroundMusic").volume = 0.2;
+window.addEventListener("load", () => {
+  const savedTime = sessionStorage.getItem("musicTime");
+  if (savedTime) {
+    document.getElementById("backgroundMusic").currentTime =
+      parseFloat(savedTime);
+  }
+  document.getElementById("backgroundMusic").play();
+});
+
+function updateTime() {
+  sessionStorage.setItem(
+    "musicTime",
+    document.getElementById("backgroundMusic").currentTime
+  );
+}
 
 firstBackground.style.opacity = 0;
 setTimeout(() => {
@@ -27,15 +41,15 @@ function handleSpacebarPress(event) {
 document.addEventListener("keydown", handleSpacebarPress);
 
 spaceWordBtn.addEventListener("mouseover", () => {
-    spaceWordBtn.src = "./img/space_word_btn_black_hover.png"
+  spaceWordBtn.src = "./img/space_word_btn_black_hover.png";
 });
 spaceWordBtn.addEventListener("mouseout", () => {
-    spaceWordBtn.src = "./img/space_word_btn_black.png"
+  spaceWordBtn.src = "./img/space_word_btn_black.png";
 });
 
 spaceDesignBtn.addEventListener("mouseover", () => {
-    spaceDesignBtn.src = "./img/space_design_btn_black_hover.png"
+  spaceDesignBtn.src = "./img/space_design_btn_black_hover.png";
 });
 spaceDesignBtn.addEventListener("mouseout", () => {
-    spaceDesignBtn.src = "./img/space_design_btn_black.png"
+  spaceDesignBtn.src = "./img/space_design_btn_black.png";
 });

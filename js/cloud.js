@@ -1,9 +1,24 @@
 document.getElementById("backgroundMusic").volume = 0.2;
-document.getElementById("backgroundMusic").play();
+window.addEventListener("load", () => {
+  const savedTime = sessionStorage.getItem("musicTime");
+  if (savedTime) {
+    document.getElementById("backgroundMusic").currentTime =
+      parseFloat(savedTime);
+  }
+  document.getElementById("backgroundMusic").play();
+});
+
+function updateTime() {
+  sessionStorage.setItem(
+    "musicTime",
+    document.getElementById("backgroundMusic").currentTime
+  );
+}
+
 let allanswer = [];
 
 async function fetchData() {
-  allanswer = []
+  allanswer = [];
   try {
     const response = await fetch(
       "https://spaceincityback.onrender.com/api/Messages/GetMessage",
@@ -28,9 +43,8 @@ async function fetchData() {
     }
     let fontSizes = [];
     if (document.body.clientWidth > 1000) {
-      fontSizes = [31, 47, 84, 125, 167]
-    }
-    else fontSizes = [9, 13, 23, 34, 45]
+      fontSizes = [31, 47, 84, 125, 167];
+    } else fontSizes = [9, 13, 23, 34, 45];
     const opacityLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
     const maxWeight = Math.max(...allanswer.map((word) => word[1]));
     const minWeight = Math.min(...allanswer.map((word) => word[1]));
