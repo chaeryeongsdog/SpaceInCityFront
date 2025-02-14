@@ -30,10 +30,9 @@ let audioRelax = document.getElementById("audioRelax");
 let isAudioNoisePlaying = true;
 
 let relaxAry = [
-  "./audio/relax1.mp3",
   "./audio/relax2.mp3",
+  "./audio/relax3.mp3",
   "./audio/relax4.mp3",
-  "./audio/relax5.mp3",
 ];
 let noiseAry = [
   "./audio/noise1.MP3",
