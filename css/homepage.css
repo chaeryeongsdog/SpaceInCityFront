@@ -81,7 +81,8 @@ img.headerBtn {
   height: 30vw;
 }
 
-img#spaceBtn, img#spaceBtnArrow {
+img#spaceBtn,
+img#spaceBtnArrow {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -104,6 +105,11 @@ img#textBackground {
   bottom: -10%;
   z-index: 0;
   opacity: 60%;
+}
+img#Btmbackground {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 @media (max-width: 1000px) {
@@ -143,7 +149,8 @@ img#textBackground {
     width: auto;
   }
 
-  img#spaceBtn, img#spaceBtnArrow {
+  img#spaceBtn,
+  img#spaceBtnArrow {
     position: absolute;
     top: 50%;
     left: 50%;

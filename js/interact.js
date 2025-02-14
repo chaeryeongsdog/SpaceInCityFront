@@ -16,15 +16,13 @@ setTimeout(() => {
 
 let selectedCharacter = localStorage.getItem("selectedCharacter");
 if (selectedCharacter == 1) {
-  slowGIF = "../img/walk1.gif"
-  fastGIF = "../img/run1.gif"
-}
-else if (selectedCharacter == 2) {
-  slowGIF = "../img/walk2.gif"
-  fastGIF = "../img/run2.gif"
+  slowGIF = "../img/walk1.gif";
+  fastGIF = "../img/run1.gif";
+} else if (selectedCharacter == 2) {
+  slowGIF = "../img/walk2.gif";
+  fastGIF = "../img/run2.gif";
 }
 img.src = fastGIF;
-console.log(selectedCharacter)
 
 //#region 音頻
 let audioNoise = document.getElementById("audioNoise");
@@ -36,16 +34,15 @@ let relaxAry = [
   "./audio/relax2.mp3",
   "./audio/relax4.mp3",
   "./audio/relax5.mp3",
-]
+];
 let noiseAry = [
   "./audio/noise1.MP3",
   "./audio/noise2.MP3",
   "./audio/noise3.MP3",
   "./audio/noise4.MP3",
   "./audio/noise5.MP3",
-]
+];
 audioNoise.src = noiseAry[Math.floor(Math.random() * noiseAry.length)];
-audioRelax.src = relaxAry[Math.floor(Math.random() * relaxAry.length)];
 audioNoise.volume = 0.4;
 audioRelax.volume = 1;
 audioNoise.play();
@@ -55,6 +52,7 @@ function togglePlay() {
   if (isAudioNoisePlaying) {
     audioNoise.pause();
     audioRelax.src = relaxAry[Math.floor(Math.random() * noiseAry.length)];
+    console.log(audioRelax.src);
     audioRelax.play();
   } else {
     audioRelax.pause();
@@ -102,8 +100,8 @@ window.onload = function () {
           scrollContainerOverlayFront.style.opacity = 0;
           body.style.transition = "all 0.2s ease";
           body.style.filter = "";
-          noiseText1.style.display = "none"
-          relaxText.style.display = "block"
+          noiseText1.style.display = "none";
+          relaxText.style.display = "block";
         }, 400);
 
         setTimeout(() => {
@@ -112,8 +110,8 @@ window.onload = function () {
           togglePlay();
           scrollContainerOverlay.style.transition = "all 3s ease";
           scrollContainerOverlayFront.style.transition = "all 3s ease";
-          noiseText1.style.display = "block"
-          relaxText.style.display = "none"
+          noiseText1.style.display = "block";
+          relaxText.style.display = "none";
           setTimeout(() => {
             scrollContainerOverlay.style.opacity = 1;
             scrollContainerOverlayFront.style.opacity = 1;
@@ -175,14 +173,14 @@ let relaxTextAry2 = [
   "../img/relax_text/10.png",
 ];
 
-let selectedRelaxAry = [], selectedNoiseAry = [];
+let selectedRelaxAry = [],
+  selectedNoiseAry = [];
 if (selectedCharacter == 1) {
-  selectedRelaxAry = relaxTextAry1
-  selectedNoiseAry = noiseTextAry1
-}
-else if (selectedCharacter == 2) {
-  selectedRelaxAry = relaxTextAry2
-  selectedNoiseAry = noiseTextAry2
+  selectedRelaxAry = relaxTextAry1;
+  selectedNoiseAry = noiseTextAry1;
+} else if (selectedCharacter == 2) {
+  selectedRelaxAry = relaxTextAry2;
+  selectedNoiseAry = noiseTextAry2;
 }
 
 let index = 0;
@@ -220,5 +218,5 @@ setTimeout(() => {
   transfer.style.opacity = 1;
 }, 36100);
 setTimeout(() => {
-  window.location.href = "quiz.html"
+  window.location.href = "quiz.html";
 }, 36900);
