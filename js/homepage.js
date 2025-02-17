@@ -21,6 +21,26 @@ function updateTime() {
   );
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  let triangle1 = document.getElementById('triangle1');
+  let triangle2 = document.getElementById('triangle2');
+
+  spaceWordBtn.addEventListener('mouseenter', function() {
+    triangle1.src = './img/triangle.gif';
+  });
+  spaceDesignBtn.addEventListener('mouseenter', function() {
+    triangle2.src = './img/triangle.gif';
+  });
+
+  spaceWordBtn.addEventListener('mouseleave', function() {
+    triangle1.src = './img/triangle.png';
+  });
+  spaceDesignBtn.addEventListener('mouseleave', function() {
+    triangle2.src = './img/triangle.png';
+  });
+});
+
+
 firstBackground.style.opacity = 0;
 setTimeout(() => {
   firstBackground.style.display = "none";

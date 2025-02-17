@@ -42,6 +42,7 @@ let noiseAry = [
   "./audio/noise5.MP3",
 ];
 audioNoise.src = noiseAry[Math.floor(Math.random() * noiseAry.length)];
+console.log(audioNoise);
 audioNoise.volume = 0.4;
 audioRelax.volume = 1;
 audioNoise.play();
@@ -120,6 +121,45 @@ window.onload = function () {
       event.preventDefault();
     }
   });
+
+  if (document.body.clientWidth < 1000) {
+    window.addEventListener("click", function (event) {
+      if (scrollSpeed != 2) {
+        scrollSpeed = 2;
+        body.style.transition = "all 0.8s ease";
+        body.style.filter = "blur(20px)";
+        scrollContainerOverlay.style.transition = "all 0.2s ease";
+        scrollContainerOverlayFront.style.transition = "all 0.2s ease";
+        togglePlay();
+        setTimeout(() => {
+          img.src = slowGIF;
+        }, 300);
+        setTimeout(() => {
+          scrollContainerOverlay.style.opacity = 0;
+          scrollContainerOverlayFront.style.opacity = 0;
+          body.style.transition = "all 0.2s ease";
+          body.style.filter = "";
+          noiseText1.style.display = "none";
+          relaxText.style.display = "block";
+        }, 400);
+
+        setTimeout(() => {
+          img.src = fastGIF;
+          scrollSpeed = 14;
+          togglePlay();
+          scrollContainerOverlay.style.transition = "all 3s ease";
+          scrollContainerOverlayFront.style.transition = "all 3s ease";
+          noiseText1.style.display = "block";
+          relaxText.style.display = "none";
+          setTimeout(() => {
+            scrollContainerOverlay.style.opacity = 1;
+            scrollContainerOverlayFront.style.opacity = 1;
+          }, 1);
+        }, 4000);
+      }
+      event.preventDefault();
+    });
+  }
 };
 
 //#region 心靈小語
