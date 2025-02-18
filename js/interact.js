@@ -44,7 +44,7 @@ let noiseAry = [
 audioNoise.src = noiseAry[Math.floor(Math.random() * noiseAry.length)];
 console.log(audioNoise);
 audioNoise.volume = 0.4;
-audioRelax.volume = 1;
+audioRelax.volume = 2;
 audioNoise.play();
 
 // 播放/暫停切換函數
