@@ -7,21 +7,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: white;
-    transition: all 0.8s ease;
-}
-
-p#loading {
-    color: #3F3F3F;
-    font-family: Inter;
-    font-size: 26.67px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #71C6D4;
     transition: all 0.8s ease;
 }
 
