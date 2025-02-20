@@ -70,7 +70,7 @@ function toQuiz() {
 
 function toResult() {
   let answer = document.getElementById("quiz").value;
-  console.log(JSON.stringify(answer))
+  console.log(JSON.stringify(answer));
 
   localStorage.setItem("answer", answer);
 
@@ -81,13 +81,13 @@ function toResult() {
     },
     body: JSON.stringify(answer),
   })
-  .then(response => response.json())  // 解析 JSON 響應
-  .then(data => {
-    console.log('Updated:', data);  // 顯示更新後的資料
-  })
-  .catch(error => {
-    console.error('Error:', error);  // 顯示錯誤信息
-  });
+    .then((response) => response.json()) // 解析 JSON 響應
+    .then((data) => {
+      console.log("Updated:", data); // 顯示更新後的資料
+    })
+    .catch((error) => {
+      console.error("Error:", error); // 顯示錯誤信息
+    });
 
   end.style.zIndex = 100;
   end.style.transition = "all 0.8s ease";

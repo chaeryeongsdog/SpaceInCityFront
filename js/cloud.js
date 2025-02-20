@@ -16,6 +16,10 @@ function updateTime() {
 }
 
 let allanswer = [];
+if (document.body.clientWidth <= 1000) {
+  document.getElementById("notificationText").innerHTML =
+    "請稍後，我們正在搜集大家的空白時刻！<br /><br />Please wait, we are collecting everyone's blank moments!";
+}
 
 async function fetchData() {
   allanswer = [];
@@ -30,6 +34,9 @@ async function fetchData() {
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
+
+    document.getElementById("notification").style.opacity = 0;
+    document.getElementById("notificationText").style.opacity = 0;
 
     const data = await response.json(); // 解析 JSON 響應
 
@@ -81,6 +88,10 @@ async function fetchData() {
       minRotation: -15 * (Math.PI / 180),
       maxRotation: 15 * (Math.PI / 180),
     });
+
+    setTimeout(() => {
+      document.getElementById("wordcloudContainer").style.opacity = 1;
+    }, 500);
   } catch (error) {
     console.error("There has been a problem with your fetch operation:", error);
   }
