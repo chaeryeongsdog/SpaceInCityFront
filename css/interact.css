@@ -21,7 +21,8 @@ body {
   z-index: 10;
 }
 
-#noiseText1, #relaxText {
+#noiseText1,
+#relaxText {
   position: absolute;
   top: 35%;
   left: 33%;
@@ -59,4 +60,16 @@ body {
   opacity: 1;
   z-index: 200;
   transition: all 0.8s ease;
+}
+
+@media (max-width: 1000px) {
+  #noiseText1,
+  #relaxText {
+    width: 80%;
+  }
+
+  #img {
+    height: 56vh;
+    left: 60%;
+  }
 }
