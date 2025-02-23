@@ -250,12 +250,12 @@ setInterval(() => {
 }, 2000);
 
 //#region 35秒後進入過度頁
-// setTimeout(() => {
-//   transfer.style.display = "block";
-// }, 35300);
-// setTimeout(() => {
-//   transfer.style.opacity = 1;
-// }, 36100);
-// setTimeout(() => {
-//   window.location.href = "quiz.html";
-// }, 36900);
+setTimeout(() => {
+  transfer.style.display = "block";
+}, 35300);
+setTimeout(() => {
+  transfer.style.opacity = 1;
+}, 36100);
+setTimeout(() => {
+  window.location.href = "quiz.html";
+}, 36900);
