@@ -97,6 +97,7 @@ async function fetchData() {
   }
 }
 
+fetchData();
 setInterval(() => {
   fetchData();
 }, 10000);
