@@ -27,10 +27,27 @@ body {
   top: 35%;
   left: 33%;
   transform: translate(-50%, -50%);
-  transition: all 0.4s ease;
+  transition: all 0.4s ease !important;
+  opacity: 0;
 }
 #relaxText {
   display: none;
+}
+#noiseText2 {
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease !important;
+  opacity: 0;
+}
+#noiseText3 {
+  position: absolute;
+  top: 35%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease !important;
+  opacity: 0;
 }
 
 .scroll-container {
@@ -64,8 +81,19 @@ body {
 
 @media (max-width: 1000px) {
   #noiseText1,
+  #noiseText2,
+  #noiseText3,
   #relaxText {
     width: 80%;
+  }
+  #noiseText1 {
+    left: 25%;
+  }
+  #noiseText2 {
+    left: 50%;
+  }
+  #noiseText3 {
+    left: 75%;
   }
 
   #img {

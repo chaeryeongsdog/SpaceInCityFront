@@ -2,8 +2,9 @@ let body = document.getElementById("body");
 let img = document.getElementById("img");
 let slowGIF, fastGIF;
 let noiseText1 = document.getElementById("noiseText1");
+let noiseText2 = document.getElementById("noiseText2");
+let noiseText3 = document.getElementById("noiseText3");
 let relaxText = document.getElementById("relaxText");
-let transfer = document.getElementById("transfer");
 
 //#region 轉場
 setTimeout(() => {
@@ -101,6 +102,8 @@ window.onload = function () {
           body.style.transition = "all 0.2s ease";
           body.style.filter = "";
           noiseText1.style.display = "none";
+          noiseText2.style.display = "none";
+          noiseText3.style.display = "none";
           relaxText.style.display = "block";
         }, 400);
 
@@ -111,6 +114,8 @@ window.onload = function () {
           scrollContainerOverlay.style.transition = "all 3s ease";
           scrollContainerOverlayFront.style.transition = "all 3s ease";
           noiseText1.style.display = "block";
+          noiseText2.style.display = "block";
+          noiseText3.style.display = "block";
           relaxText.style.display = "none";
           setTimeout(() => {
             scrollContainerOverlay.style.opacity = 1;
@@ -140,6 +145,8 @@ window.onload = function () {
           body.style.transition = "all 0.2s ease";
           body.style.filter = "";
           noiseText1.style.display = "none";
+          noiseText2.style.display = "none";
+          noiseText3.style.display = "none";
           relaxText.style.display = "block";
         }, 400);
 
@@ -150,6 +157,8 @@ window.onload = function () {
           scrollContainerOverlay.style.transition = "all 3s ease";
           scrollContainerOverlayFront.style.transition = "all 3s ease";
           noiseText1.style.display = "block";
+          noiseText2.style.display = "block";
+          noiseText3.style.display = "block";
           relaxText.style.display = "none";
           setTimeout(() => {
             scrollContainerOverlay.style.opacity = 1;
@@ -222,20 +231,35 @@ if (selectedCharacter == 1) {
   selectedNoiseAry = noiseTextAry2;
 }
 
+noiseText1.src = selectedNoiseAry[0];
+noiseText2.src = selectedNoiseAry[1];
+noiseText3.src = selectedNoiseAry[2];
+function cycleData() {
+  let i = 0;
+  setInterval(() => {
+    if (i % 3 == 0) {
+      noiseText1.src = selectedNoiseAry[i % selectedNoiseAry.length];
+    } else if (i % 3 == 1) {
+      noiseText2.src = selectedNoiseAry[i % selectedNoiseAry.length];
+    } else {
+      noiseText3.src = selectedNoiseAry[i % selectedNoiseAry.length];
+    }
+    i++;
+  }, 2000);
+}
+
+cycleData();
+
 let index = 0;
-noiseText1.src = selectedNoiseAry[index];
 relaxText.src = selectedRelaxAry[index];
 index++;
-
 setTimeout(() => {
   setInterval(() => {
-    if (index < selectedNoiseAry.length) {
-      noiseText1.src = selectedNoiseAry[index];
+    if (index < selectedRelaxAry.length) {
       relaxText.src = selectedRelaxAry[index];
       index++;
     } else {
       index = 0;
-      noiseText1.src = selectedNoiseAry[index];
       relaxText.src = selectedRelaxAry[index];
       index++;
     }
@@ -245,17 +269,52 @@ setTimeout(() => {
 let opacity = 0;
 setInterval(() => {
   opacity = opacity === 0 ? 1 : 0;
-  noiseText1.style.opacity = opacity;
   relaxText.style.opacity = opacity;
 }, 2000);
+setTimeout(() => {
+  noiseText1.style.opacity = 1;
+}, 4000);
+setTimeout(() => {
+  noiseText2.style.opacity = 1;
+}, 6000);
+setTimeout(() => {
+  noiseText3.style.opacity = 1;
+}, 8000);
+setTimeout(() => {
+  noiseText1.style.opacity = 0;
+  console.log(123);
+}, 7000);
+setTimeout(() => {
+  noiseText2.style.opacity = 0;
+}, 9000);
+setTimeout(() => {
+  setInterval(() => {
+    noiseText1.style.opacity = 1;
+    setTimeout(() => {
+      noiseText3.style.opacity = 0;
+    }, 1000);
+    setTimeout(() => {
+      noiseText2.style.opacity = 1;
+    }, 2000);
+    setTimeout(() => {
+      noiseText1.style.opacity = 0;
+    }, 3000);
+    setTimeout(() => {
+      noiseText3.style.opacity = 1;
+    }, 4000);
+    setTimeout(() => {
+      noiseText2.style.opacity = 0;
+    }, 5000);
+  }, 6000);
+}, 4000);
 
 //#region 35秒後進入過度頁
-setTimeout(() => {
-  transfer.style.display = "block";
-}, 35300);
-setTimeout(() => {
-  transfer.style.opacity = 1;
-}, 36100);
-setTimeout(() => {
-  window.location.href = "quiz.html";
-}, 36900);
+// setTimeout(() => {
+//   transfer.style.display = "block";
+// }, 35300);
+// setTimeout(() => {
+//   transfer.style.opacity = 1;
+// }, 36100);
+// setTimeout(() => {
+//   window.location.href = "quiz.html";
+// }, 36900);
